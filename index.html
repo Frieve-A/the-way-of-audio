@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音響道 ─ 十二流派診断</title>
+  <meta name="description" content="あなたのオーディオ道を50の問いで測る。十二流派のどれに最も近いかを診断します。">
+  <meta property="og:title" content="音響道 ─ 十二流派診断">
+  <meta property="og:description" content="あなたのオーディオ道を50の問いで測る。十二流派のどれに最も近いかを診断します。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#9c7a2e">
+  <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="scroll">
+  <div class="scroll-body">
+
+    <!-- ── 共通タイトル（常時表示） ── -->
+    <img class="title-only-img title-only-img--top hidden" src="assets/images/ogp.png" alt="音響道">
+    <h1 class="app-title"><ruby>音 響 道<rt>オーディオ道</rt></ruby></h1>
+    <p class="app-subtitle" data-i18n="app_subtitle"></p>
+
+    <!-- ── タイトル画面 ── -->
+    <div id="screen-title" class="screen active">
+      <hr class="divider">
+      <p class="title-desc">オーディオには様々な楽しみ方があります。<br>
+        原音再生を極める人、音を自分好みに染める人、機材を愛でる人、名機を集める人、語らいの場として楽しむ人…。<br>
+        本アプリはあなたのオーディオ観を十二の流派に分類し、自分でも気づいていなかった「音との向き合い方」を診断します。</p>
+      <button id="btn-start" class="btn btn--gold" data-i18n="quiz_start"></button>
+      <p class="title-disclaimer">※本アプリは回答後すぐに診断結果を表示し、診断結果閲覧のためにメールアドレス等の入力は一切不要です。</p>
+      <button id="btn-schools" class="btn btn--secondary" data-i18n="nav_schools"></button>
+      <img class="title-only-img title-only-img--schools" src="assets/images/schools.png" alt="十二流派">
+    </div>
+
+    <!-- ── 説明画面 ── -->
+    <div id="screen-intro" class="screen">
+      <p class="section-title">─ 流派への問道 ─</p>
+      <p class="intro-text">
+        あなたがオーディオに求めるものを、五十の問いで測ります。<br>
+        心の声に従い、正直にお答えください。<br>
+        あまり深く考えず、直感でお答えいただくのがおすすめです。
+      </p>
+      <ul class="intro-list">
+        <li>全50問、6択からひとつを選択</li>
+        <li>「わからない」は除外して計算されます</li>
+        <li>所要時間：約5分〜</li>
+      </ul>
+      <button id="btn-begin" class="btn btn--gold" data-i18n="quiz_begin"></button>
+      <button id="btn-intro-back" class="btn btn--secondary" data-i18n="quiz_back"></button>
+    </div>
+
+    <!-- ── 質問画面 ── -->
+    <div id="screen-quiz" class="screen">
+      <div class="quiz-header">
+        <div id="page-label" class="quiz-page-label"></div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-bar__fill" style="width:20%"></div>
+        </div>
+        <div id="answered-count" class="quiz-count"></div>
+      </div>
+
+      <div id="questions-container"></div>
+
+      <div class="quiz-nav">
+        <button id="btn-prev" class="btn btn--secondary hidden" data-i18n="quiz_prev"></button>
+        <button id="btn-next" class="btn btn--gold" data-i18n="quiz_next"></button>
+      </div>
+    </div>
+
+    <!-- ── 演出画面 ── -->
+    <div id="screen-loading" class="screen">
+      <div class="loading-screen">
+        <div class="ink-circle"></div>
+        <p class="loading-text" data-i18n="quiz_loading"></p>
+      </div>
+    </div>
+
+    <div class="video-section">
+      <hr class="divider">
+      <p class="video-label">音響道、十二大流派の家元本人による流派紹介</p>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/nX9PutzpU30"
+                title="音響道、十二大流派の家元本人による流派紹介"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="js/quiz.js"></script>
+<footer class="site-footer">&copy; 2026 Frieve</footer>
+</body>
+</html>

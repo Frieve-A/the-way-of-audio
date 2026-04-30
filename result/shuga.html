@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音響道 ─ 蒐雅流（しゅうがりゅう）</title>
+  <meta name="description" content="蒐雅流とは、名器・珍器を蒐め、その希少と由来と連なりを手元に編み上げることを雅とする収蔵の道です。">
+  <meta property="og:title" content="音響道 ─ 蒐雅流">
+  <meta property="og:description" content="蒐雅流とは、名器・珍器を蒐め、その希少と由来と連なりを手元に編み上げることを雅とする収蔵の道です。">
+  <meta property="og:image" content="../assets/images/ogp/shuga.png">
+  <meta property="og:url" content="https://frieve-a.github.io/the-way-of-audio/result/shuga.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://frieve-a.github.io/the-way-of-audio/result/shuga.html">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#9c7a2e">
+  <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-school-id="shuga">
+<div class="scroll">
+  <div class="scroll-body">
+
+    <header class="result-site-header">
+      <a href="../index.html" class="result-site-header__link">
+        <ruby>音 響 道<rt>オーディオ道</rt></ruby>
+      </a>
+      <p class="result-site-header__sub">十二流派診断</p>
+    </header>
+
+    <!-- グラフセクション（パラムなしは非表示） -->
+    <section id="chart-section" class="hidden">
+      <p class="section-title" data-i18n="result_title"></p>
+      <div id="reliability-notice" class="reliability-notice hidden"></div>
+      <div class="bar-chart-wrapper">
+        <div id="bar-chart" class="bar-chart"></div>
+        <div id="bar-x-labels" class="bar-chart__x-labels"></div>
+      </div>
+    </section>
+
+    <!-- 主副潜在流派（パラムあり時のみ） -->
+    <section id="rank-summary" class="rank-summary hidden">
+      <div id="main-school" class="rank-summary__item"></div>
+      <div id="sub-school" class="rank-summary__item"></div>
+      <div id="latent-school" class="rank-summary__item"></div>
+    </section>
+
+    <hr id="hr-top" class="divider">
+
+    <!-- 掛け軸・流派情報（常時表示） -->
+    <section id="school-section">
+      <img class="school-scroll-img" src="../assets/images/schools/shugaryu.jpg" alt="蒐雅流">
+      <h1 class="school-name-heading"><ruby>蒐雅流<rt>しゅうがりゅう</rt></ruby></h1>
+      <p class="school-iemoto">家元：蔵音堂（ぞうおんどう）</p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 長文説明（常時表示・SEO） -->
+    <section class="school-description">
+      <h2 class="section-title">蒐雅流の言葉</h2>
+      <p>蒐雅流において、機材を所有するとは、その機材の物語ごと手元に引き受けることを意味する。廃番となった名機、生産数の少ない限定モデル、著名なエンジニアが手掛けた一点物——それらの希少性と来歴が、コレクションに深みと意味を与える。</p>
+      <p>この流派の修行者は、中古市場を巡り、オークションを追い、時に海外から機材を取り寄せる。使う予定がなくても「価値ある物を手元に置く」ことに意義を見出す。機材は並べるだけで美しく、蔵に収まることでその価値を発揮する。</p>
+      <p>向く環境は、専用のオーディオルームや収納棚が完備された機材庫、あるいはショールームのように整然と機材が並ぶ空間など。音を愛でると同時に、物の連なりを編む者の流派である。</p>
+    </section>
+
+    <hr id="hr-before-ranking" class="divider">
+
+    <!-- ランキング表（パラムあり時のみ） -->
+    <section id="ranking-section" class="hidden">
+      <p class="section-title" data-i18n="result_ranking"></p>
+      <table id="ranking-table" class="ranking-table"></table>
+    </section>
+
+    <!-- シェア・再診断 -->
+    <section id="actions-section" class="actions">
+      <a id="btn-share-x" href="#" target="_blank" rel="noopener" class="btn btn--gold" data-i18n="result_share_x"></a>
+      <a id="btn-share-fb" href="#" target="_blank" rel="noopener" class="btn btn--gold" data-i18n="result_share_fb"></a>
+      <a href="../index.html?start=1" class="btn btn--secondary" data-i18n="result_retry"></a>
+      <a href="../schools.html" class="btn btn--secondary" data-i18n="nav_schools"></a>
+    </section>
+
+    <!-- CTA直接閲覧時 -->
+    <section id="cta-section" class="cta-section hidden">
+      <p data-i18n="result_no_data"></p>
+      <a href="../index.html?start=1" class="btn btn--gold" data-i18n="result_cta_quiz"></a>
+      <a href="../schools.html" class="btn btn--secondary" data-i18n="nav_schools"></a>
+    </section>
+
+  </div>
+</div>
+
+<script type="module" src="../js/result.js"></script>
+<footer class="site-footer">&copy; 2026 Frieve</footer>
+</body>
+</html>

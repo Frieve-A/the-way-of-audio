@@ -21,6 +21,54 @@ const SCHOOL_READINGS = {
   kodan:  'こうだんりゅう', gagan: 'ががんりゅう',   jii:   'じいりゅう',     junrei: 'じゅんれいりゅう'
 }
 
+const SCHOOL_RECOMMENDED_SITES = {
+  shinon: [
+    {
+      title: 'Frieve - AudioSpecs',
+      description: 'スペックと測定結果からオーディオ機器を探し分析するサイト',
+      url: 'https://audiospecs.frieve.com/'
+    },
+    {
+      title: 'Frieve - Audio Review',
+      description: 'オーディオ関連企業・製品のメタレビューサイト。科学的・論理的・合理的視点から、スペックと測定結果による音質と機能だけを基準に評価',
+      url: 'https://audioreview.frieve.com/'
+    }
+  ],
+  senon: [
+    {
+      title: 'Frieve - EffeTune',
+      description: 'オーディオ愛好家のために設計されたリアルタイムオーディオエフェクトアプリ。オーディオソースを多様な高品質エフェクトで処理し、リスニング体験を自由にカスタマイズできます。',
+      url: 'https://effetune.frieve.com/docs/i18n/ja/'
+    }
+  ],
+  kodan: [
+    {
+      title: 'Frieve-A Music YouTubeチャンネル',
+      description: 'オーディオに関する話題も多数取り扱うYouTubeチャンネル。オーディオ系動画のコメント欄はいつも、「ここは本当にYouTubeなのか？」と目を疑うほどの盛り上がりを見せる。',
+      url: 'https://www.youtube.com/playlist?list=PLkKGQtDnTRCCNddYbkBYAmdRxP4l4XFWT'
+    }
+  ],
+  shusei: [
+    {
+      title: 'Frieve - EffeTune',
+      description: 'オーディオ愛好家のために設計されたリアルタイムオーディオエフェクトアプリ。マイクを用いた周波数特性の測定とルームEQ補正機能を提供。',
+      url: 'https://effetune.frieve.com/docs/i18n/ja/'
+    }
+  ],
+  kido: [
+    {
+      title: 'オーディオの終焉と再生（無料電子書籍版）',
+      description: '現代オーディオ技術が物理的に「終わった」にもかかわらず、なぜ人々は「良い音」を求めて彷徨い続けるのかを、数理的・科学的に解明するベストセラー書籍',
+      url: 'https://deuslibri.com/book/the-end-and-rebirth-of-audio/ja'
+    },
+    {
+      title: 'オーディオの終焉と再生（紙書籍版）',
+      description: '現代オーディオ技術が物理的に「終わった」にもかかわらず、なぜ人々は「良い音」を求めて彷徨い続けるのかを、数理的・科学的に解明するベストセラー書籍',
+      url: 'https://www.amazon.co.jp/dp/B0GJ4M124M'
+    }
+  ]
+}
+
 function ruby(name, id) {
   return `<ruby>${name}<rt>${SCHOOL_READINGS[id]}</rt></ruby>`
 }
@@ -124,6 +172,50 @@ function renderRanking(ranked, currentId) {
   table.appendChild(tbody)
 }
 
+function renderRecommendedSites(currentId) {
+  const sites = SCHOOL_RECOMMENDED_SITES[currentId]
+  if (!sites || sites.length === 0) return
+
+  const section = document.createElement('section')
+  section.className = 'recommended-sites'
+  section.innerHTML =
+    `<h2 class="section-title recommended-sites__heading">${SCHOOL_NAMES[currentId]}のあなたにおすすめのサイト</h2>` +
+    `<ul class="recommended-sites__list">` +
+    sites.map(s =>
+      `<li class="recommended-sites__item">` +
+        `<a class="recommended-sites__link" href="${s.url}" target="_blank" rel="noopener">` +
+          `<span class="recommended-sites__title">${s.title}</span>` +
+          `<span class="recommended-sites__desc">${s.description}</span>` +
+        `</a>` +
+      `</li>`
+    ).join('') +
+    `</ul>`
+
+  const description = document.querySelector('.school-description')
+  description?.insertAdjacentElement('afterend', section)
+}
+
+function renderSchoolNav(currentId) {
+  const idx = SCHOOL_IDS.indexOf(currentId)
+  const prevId = SCHOOL_IDS[(idx - 1 + SCHOOL_IDS.length) % SCHOOL_IDS.length]
+  const nextId = SCHOOL_IDS[(idx + 1) % SCHOOL_IDS.length]
+
+  const nav = document.createElement('section')
+  nav.className = 'school-nav'
+  nav.innerHTML =
+    `<a href="${prevId}.html" class="btn btn--secondary school-nav__btn">` +
+      `<span class="school-nav__dir">◀ 前の流派</span>` +
+      `<span class="school-nav__name">${SCHOOL_NAMES[prevId]}</span>` +
+    `</a>` +
+    `<a href="${nextId}.html" class="btn btn--secondary school-nav__btn school-nav__btn--next">` +
+      `<span class="school-nav__dir">次の流派 ▶</span>` +
+      `<span class="school-nav__name">${SCHOOL_NAMES[nextId]}</span>` +
+    `</a>`
+
+  const ctaSection = document.getElementById('cta-section')
+  ctaSection?.parentNode?.insertBefore(nav, ctaSection)
+}
+
 function renderReliability(validCount) {
   if (validCount === null) return
   const el = document.getElementById('reliability-notice')
@@ -173,6 +265,7 @@ async function init() {
     renderRanking(result.ranked, currentId)
     renderReliability(result.validCount)
     initShareButton(currentId)
+    renderRecommendedSites(currentId)
     gtag('event', 'result_view', { school_id: currentId, school_name: SCHOOL_NAMES[currentId] })
   } else {
     document.getElementById('chart-section')?.classList.add('hidden')
@@ -181,6 +274,8 @@ async function init() {
     document.getElementById('ranking-section')?.classList.add('hidden')
     document.getElementById('hr-before-ranking')?.classList.add('hidden')
     document.getElementById('actions-section')?.classList.add('hidden')
+    renderRecommendedSites(currentId)
+    renderSchoolNav(currentId)
     document.getElementById('cta-section')?.classList.remove('hidden')
   }
 }

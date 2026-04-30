@@ -35,6 +35,24 @@ body {
   letter-spacing: 0.08em;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.4em;
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: var(--gold);
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 /* ── 巻物コンテナ ── */
 .scroll {
   width: 100%;

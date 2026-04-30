@@ -1,4 +1,5 @@
 import { I18N } from './i18n.js'
+import './footer.js'
 
 const SCHOOL_IDS = ['shinon','senon','isho','kaiin','kido','shuga','shusei','bensei','kodan','gagan','jii','junrei']
 

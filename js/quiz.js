@@ -165,6 +165,10 @@ function renderQuizPage(page) {
         radio.checked = true
         document.getElementById('answered-count').textContent =
           I18N.t('quiz_answered', { count: countAnswered() })
+        const nextCard = card.nextElementSibling
+        if (nextCard) {
+          window.scrollTo({ top: nextCard.getBoundingClientRect().top + window.scrollY - 24, behavior: 'smooth' })
+        }
       })
 
       optionsEl.appendChild(label)

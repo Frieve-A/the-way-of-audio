@@ -32,6 +32,16 @@ const SCHOOL_RECOMMENDED_SITES = {
       title: 'Frieve - Audio Review',
       description: 'オーディオ関連企業・製品のメタレビューサイト。科学的・論理的・合理的視点から、スペックと測定結果による音質と機能だけを基準に評価',
       url: 'https://audioreview.frieve.com/'
+    },
+    {
+      title: '創造の館 Technical Report YouTubeチャンネル',
+      description: 'オーディオに関連した技術的な検証と測定で本当の性能を掘り下げるYouTubeチャンネル。原音再生関連の動画多数。',
+      url: 'https://www.youtube.com/@souzouno-yakata'
+    },
+    {
+      title: 'AES日本支部',
+      description: 'オーディオ工学・音響技術の専門家、研究者、教育者、学生が集まる技術系組織。真音流の上流知識への入口。',
+      url: 'https://www.aes-japan.org/'
     }
   ],
   senon: [
@@ -41,11 +51,33 @@ const SCHOOL_RECOMMENDED_SITES = {
       url: 'https://effetune.frieve.com/docs/i18n/ja/'
     }
   ],
+  shuga: [
+    {
+      title: 'ハードオフ オーディオサロン吉祥寺店',
+      description: '整備済みの中古オーディオ名機を探せる、ハードオフ系の中でもオーディオ色が強い専門拠点。',
+      url: 'https://netmall.hardoff.co.jp/shop/101079/'
+    },
+    {
+      title: 'ハイファイ堂',
+      description: '中古・ヴィンテージ・希少機材を探し、買い、眺めるための大型中古オーディオ拠点です。',
+      url: 'https://www.hifido.co.jp/'
+    },
+    {
+      title: 'オーディオユニオン',
+      description: '中古・新品オーディオを型番単位で探せる専門店。名機・定番機・入れ替え候補を追う蒐集派向けの実用導線。',
+      url: 'https://www.audiounion.jp/'
+    }
+  ],
   kodan: [
     {
       title: 'Frieve-A Music YouTubeチャンネル',
       description: 'オーディオに関する話題も多数取り扱うYouTubeチャンネル。オーディオ系動画のコメント欄はいつも、「ここは本当にYouTubeなのか？」と目を疑うほどの盛り上がりを見せる。',
       url: 'https://www.youtube.com/playlist?list=PLkKGQtDnTRCCNddYbkBYAmdRxP4l4XFWT'
+    },
+    {
+      title: 'OTOTEN / 日本オーディオ協会',
+      description: '国内オーディオメーカー、販売店、評論家、愛好家が試聴・展示・セミナーを通じて交わる、交談流向けの大型イベント導線。',
+      url: 'https://www.jas-audio.or.jp/audiofair/'
     }
   ],
   shusei: [
@@ -53,9 +85,53 @@ const SCHOOL_RECOMMENDED_SITES = {
       title: 'Frieve - EffeTune',
       description: 'オーディオ愛好家のために設計されたリアルタイムオーディオエフェクトアプリ。マイクを用いた周波数特性の測定とルームEQ補正機能を提供。',
       url: 'https://effetune.frieve.com/docs/i18n/ja/'
+    },
+    {
+      title: '創造の館 Technical Report YouTubeチャンネル',
+      description: 'オーディオに関連した技術的な検証と測定で本当の性能を掘り下げるYouTubeチャンネル。ビンテージ機器の修理動画多数。',
+      url: 'https://www.youtube.com/@souzouno-yakata'
+    },
+    {
+      title: '宮甚商店 YouTubeチャンネル',
+      description: 'ジャンク品、安価な現行機器、真空管、自作工作を分解・改造・実聴で楽しむ、修理・工作・自作寄りの実践派チャンネル。',
+      url: 'https://www.youtube.com/@miyazin-shoten'
+    },
+    {
+      title: 'DIY Loudspeaker Builder\'s Meeting',
+      description: '自作スピーカー、測定、設計、シミュレーション、工作を扱う、自作スピーカー実践者向けの技術系コミュニティ導線。',
+      url: 'https://diy-audiospeaker.sub.jp/'
+    }
+  ],
+  bensei: [
+    {
+      title: 'AV Watch',
+      description: '生活導入・新製品・実用機能を広く扱う、日常実装寄りの大規模AV系ニュースメディアです。',
+      url: 'https://av.watch.impress.co.jp/'
+    },
+    {
+      title: 'ホームシアターCHANNEL',
+      description: 'ホームシアター実例、設置、インテリア、防音、スピーカーやサウンドバーの活用まで扱う、音のある空間づくり系メディアです。',
+      url: 'https://hometheater.phileweb.com/'
+    }
+  ],
+  kaiin: [
+    {
+      title: 'オーディオの足跡',
+      description: '新旧機材の仕様・系譜・広告を蓄積する、ヴィンテージ機材アーカイブの代表格です。',
+      url: 'https://audio-heritage.jp/'
+    },
+    {
+      title: 'ディスクユニオン 中古オンライン',
+      description: '中古レコード・CDを探し、失われた時代の音源や記憶を掘り起こすための音楽メディア蒐集導線。',
+      url: 'https://diskunion.net/used/'
     }
   ],
   kido: [
+    {
+      title: 'オーディオの足跡',
+      description: '新旧機材の仕様・系譜・広告を蓄積する、ヴィンテージ機材アーカイブの代表格です。',
+      url: 'https://audio-heritage.jp/'
+    },
     {
       title: 'オーディオの終焉と再生（無料電子書籍版）',
       description: '現代オーディオ技術が物理的に「終わった」にもかかわらず、なぜ人々は「良い音」を求めて彷徨い続けるのかを、数理的・科学的に解明するベストセラー書籍',
@@ -65,6 +141,54 @@ const SCHOOL_RECOMMENDED_SITES = {
       title: 'オーディオの終焉と再生（紙書籍版）',
       description: '現代オーディオ技術が物理的に「終わった」にもかかわらず、なぜ人々は「良い音」を求めて彷徨い続けるのかを、数理的・科学的に解明するベストセラー書籍',
       url: 'https://www.amazon.co.jp/dp/B0GJ4M124M'
+    }
+  ],
+  isho: [
+    {
+      title: 'SOUND CREATE',
+      description: 'オーディオ機器を試聴空間・生活空間・導入相談と結びつけて扱う、ショップ主導の設え系メディアです。',
+      url: 'https://soundcreate.co.jp/'
+    },
+    {
+      title: 'ホームシアターCHANNEL',
+      description: 'ホームシアター実例、設置、インテリア、防音、スピーカーやサウンドバーの活用まで扱う、音のある空間づくり系メディアです。',
+      url: 'https://hometheater.phileweb.com/'
+    }
+  ],
+  gagan: [
+    {
+      title: 'e☆イヤホン',
+      description: 'イヤホン・ヘッドホンを眺め、触れ、聴き比べ、所有欲ごと楽しむためのポータブルオーディオ専門店。',
+      url: 'https://www.e-earphone.jp/'
+    }
+  ],
+  jii: [
+    {
+      title: 'Stereo Sound ONLINE',
+      description: 'ハイエンドオーディオ、AV、管球、プロサウンド、受賞・新製品情報を扱う上位機材志向の大規模専門メディアです。',
+      url: 'https://online.stereosound.co.jp/'
+    },
+    {
+      title: 'ダイナミックオーディオ5555',
+      description: '秋葉原の高級オーディオ試聴拠点。ハイエンド機材を通じて到達点・審美眼・所有欲を確認する示威流向けスポット。',
+      url: 'https://www.dynamicaudio.jp/5555/'
+    }
+  ],
+  junrei: [
+    {
+      title: '遊び案内人TONOチャンネル (YouTube)',
+      description: 'ハードオフ巡り・中古/現行機材・ヴィンテージ名機・大型スピーカー訪問を、実聴の感動と趣味人目線で見せる"オーディオ遊び探訪"チャンネル',
+      url: 'https://www.youtube.com/@asobiannainin'
+    },
+    {
+      title: 'ポタフェス',
+      description: 'イヤホン・ヘッドホン・DAP・ポータブルアンプを全国会場で試聴できる、ポータブルオーディオ系の大型体験イベントです。',
+      url: 'https://potafes.com/'
+    },
+    {
+      title: 'ヘッドフォン祭',
+      description: 'イヤホン、ヘッドホン、DAP、ポータブルアンプをブランド横断で試聴できる、ポータブルオーディオ系の定番試聴イベントです。',
+      url: 'https://www.fujiya-avic.co.jp/shop/pg/1a-evschedule/'
     }
   ]
 }

@@ -1,5 +1,7 @@
 # 音響道 十二流派診断
 
+**[アプリを開く](https://frieve-a.github.io/the-way-of-audio/)**
+
 あなたのオーディオ道を50の問いで測る、エンタメ診断サイトです。  
 12流派のどれに最も近いかを、Softmaxを用いた独自スコアリングで算出します。
 
@@ -106,5 +108,3 @@ git push -u origin main
 3. **表示点数** `score_s = round(normalized_s × 100)`
 4. **Softmax** 温度 `T = 0.12` で12流派の確率を算出
 5. **最大剰余法** で合計が必ず100%になるよう丸め補正
-
-詳細は [dev/plan.md](dev/plan.md) を参照。

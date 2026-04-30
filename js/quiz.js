@@ -302,6 +302,28 @@ async function init() {
     showScreen('screen-title')
   }
 
+  window.addEventListener('beforeunload', e => {
+    if (document.getElementById('screen-quiz').classList.contains('active')) {
+      gtag('event', 'quiz_abandon', {
+        quiz_page: currentPage + 1,
+        answered_count: countAnswered(),
+        transport_type: 'beacon'
+      })
+      e.preventDefault()
+      e.returnValue = ''
+    }
+  })
+
+  document.querySelector('.app-title').addEventListener('click', () => {
+    if (document.getElementById('screen-quiz').classList.contains('active')) {
+      if (!confirm('入力内容が失われます。トップページに戻りますか？')) return
+    }
+    answers = {}
+    sessionStorage.removeItem('quiz_order')
+    shuffledOrder = shuffleQuestions()
+    showScreen('screen-title')
+  })
+
   document.getElementById('btn-start').addEventListener('click', () => showScreen('screen-intro'))
   document.getElementById('btn-schools').addEventListener('click', () => { window.location.href = 'schools.html' })
   document.getElementById('btn-begin').addEventListener('click', () => {
@@ -322,6 +344,7 @@ async function init() {
     }
     if (currentPage === 4) {
       const result = calcResult()
+      gtag('event', 'quiz_complete', { valid_count: result.validCount })
       const url = buildResultURL(result)
       showLoading(url)
     } else {

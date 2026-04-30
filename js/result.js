@@ -140,11 +140,17 @@ function initShareButton(currentId) {
   const btnX = document.getElementById('btn-share-x')
   if (btnX) {
     btnX.href = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`
+    btnX.addEventListener('click', () => {
+      gtag('event', 'share', { method: 'x', content_type: 'result', item_id: currentId })
+    })
   }
 
   const btnFb = document.getElementById('btn-share-fb')
   if (btnFb) {
     btnFb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+    btnFb.addEventListener('click', () => {
+      gtag('event', 'share', { method: 'facebook', content_type: 'result', item_id: currentId })
+    })
   }
 }
 
@@ -166,6 +172,7 @@ async function init() {
     renderRanking(result.ranked, currentId)
     renderReliability(result.validCount)
     initShareButton(currentId)
+    gtag('event', 'result_view', { school_id: currentId, school_name: SCHOOL_NAMES[currentId] })
   } else {
     document.getElementById('chart-section')?.classList.add('hidden')
     document.getElementById('rank-summary')?.classList.add('hidden')

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://frieve-a.github.io/the-way-of-audio/sitemap.xml

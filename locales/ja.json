@@ -28,6 +28,8 @@
   "result_ranking_th_pct": "確率",
   "result_share_x": "𝕏 でシェア",
   "result_share_fb": "Facebook でシェア",
+  "result_share_copy": "URLをコピーしてシェア",
+  "result_share_copied": "コピーしました！",
   "result_retry": "もう一度診断する",
   "result_no_data": "あなたもどの流派か診断してみましょう",
   "result_cta_quiz": "あなたも診断する",

@@ -369,6 +369,21 @@ function initShareButton(currentId) {
       gtag('event', 'share', { method: 'facebook', content_type: 'result', item_id: currentId })
     })
   }
+
+  const btnCopy = document.getElementById('btn-copy-url')
+  if (btnCopy) {
+    btnCopy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(url)
+        const original = btnCopy.textContent
+        btnCopy.textContent = I18N.t('result_share_copied')
+        setTimeout(() => { btnCopy.textContent = original }, 2000)
+        gtag('event', 'share', { method: 'copy_url', content_type: 'result', item_id: currentId })
+      } catch {
+        prompt('URLをコピーしてください', url)
+      }
+    })
+  }
 }
 
 async function init() {

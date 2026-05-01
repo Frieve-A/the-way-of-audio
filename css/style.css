@@ -557,6 +557,19 @@ h1, h2, h3 {
   text-underline-offset: 3px;
 }
 
+/* 流派定義一行 */
+.school-tagline {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ink-dark);
+  text-align: center;
+  font-style: italic;
+  border-top: 1px solid var(--parchment-dark);
+  border-bottom: 1px solid var(--parchment-dark);
+  padding: 12px 8px;
+  margin-bottom: 1.4em;
+}
+
 /* 長文説明 */
 .school-description {
   font-size: 0.93rem;

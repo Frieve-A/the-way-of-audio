@@ -315,8 +315,12 @@ function renderRecommendedSites(currentId) {
     ).join('') +
     `</ul>`
 
-  const description = document.querySelector('.school-description')
-  description?.insertAdjacentElement('afterend', section)
+  const hr = document.createElement('hr')
+  hr.className = 'divider'
+
+  const anchor = document.querySelector('.school-affinity') ?? document.querySelector('.school-description')
+  anchor?.insertAdjacentElement('afterend', section)
+  section.insertAdjacentElement('beforebegin', hr)
 }
 
 function renderSchoolNav(currentId) {
